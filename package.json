@@ -1,0 +1,17 @@
+{
+  "name": "xsd2jsonschema",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "argparse": "^1.0.9",
+    "jsonix-schema-compiler": "^2.3.9",
+    "mkdirp": "^0.5.1",
+    "rmrf": "^1.0.2"
+  }
+}

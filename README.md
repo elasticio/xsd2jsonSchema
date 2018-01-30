@@ -1,2 +1,8 @@
-# xsd2jsonSchema
-XSD to JSON schema converter
+# XSD to JSON schema converter
+
+Java v9 is required
+
+1) `npm i`
+2) `node index.js -x xsd_examples/sample.xsd -j sampleJSONSchema`
+
+Last command will create `generated_schema.json`
