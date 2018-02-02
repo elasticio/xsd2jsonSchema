@@ -45,7 +45,7 @@ rmrf('./generated');
 mkdir.sync('./generated/schemas');
 
 (async () => {
-    await new Promise(resolve => {
+    await new Promise((resolve, reject) => {
         const child = spawn('java', [
             '--add-modules=java.xml.bind,java.activation',
             '-jar',
@@ -56,7 +56,14 @@ mkdir.sync('./generated/schemas');
             xsd
         ]);
 
-        child.on('close', resolve);
+        child.on('close', (code) => {
+            if (code === 0) {
+                console.log(`Jsonix successfully completed.`);
+                resolve();
+            } else {
+                reject(`Error code ${code}`);
+            }
+        });
 
         child.stdout.on('data', buf => {
             console.log(buf.toString());
