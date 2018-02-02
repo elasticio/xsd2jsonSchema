@@ -26,10 +26,10 @@ parser.addArgument(
 const args = parser.parseArgs();
 
 const {
-    xsd,
-    jsonschema
+    xsd
 } = args;
 
+const jsonschema = 'asdasdasd';
 
 function createSchema(filename, generatedSchema) {
     const content = {
@@ -81,7 +81,7 @@ mkdir.sync('./generated/schemas');
     const propertyInfos = generatedSchema.typeInfos.reduce((pInfos, typeInfo) => {
         return [
             ...pInfos,
-            ...typeInfo.propertyInfos
+            ...(typeInfo.propertyInfos || [])
         ];
     }, []);
 

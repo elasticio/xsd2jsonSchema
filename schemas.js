@@ -95,7 +95,7 @@ module.exports = function generateProperties(generatedSchema) {
     const propertyInfos = generatedSchema.typeInfos.reduce((pInfos, typeInfo) => {
         return [
             ...pInfos,
-            ...typeInfo.propertyInfos
+            ...(typeInfo.propertyInfos || [])
         ];
     }, []);
 
