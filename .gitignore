@@ -60,3 +60,4 @@ typings/
 generated
 component.json
 generated_schema.json
+.idea
